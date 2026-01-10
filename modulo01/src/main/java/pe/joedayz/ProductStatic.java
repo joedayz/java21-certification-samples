@@ -6,15 +6,25 @@ import java.time.Period;
 
 public class ProductStatic {
 
-    private static Period defaultExpiryPeriod = Period.ofDays(3);
+    private static Period defaultExpiryPeriod; //= Period.ofDays(3);
 
     private String name;
     private BigDecimal price;
     private LocalDate bestBefore;
 
+    static{
+        defaultExpiryPeriod = Period.ofDays(3);
+    }
+
+    public void play(){
+        System.out.println(name);
+        System.out.println(price);
+        System.out.println(defaultExpiryPeriod);
+    }
 
     public static void setDefaultExpiryPeriod(int days){
         defaultExpiryPeriod = Period.ofDays(days);
+        //System.out.println(name);
     }
 
     public static void main(String[] args) {
@@ -26,6 +36,8 @@ public class ProductStatic {
         p1.setDefaultExpiryPeriod(5); // si es posible
 
         ProductStatic.setDefaultExpiryPeriod(7); // FORMA RECOMENDADA
+
+
 
         ProductStatic p2 = new ProductStatic();
         p2.setName("Cookie");

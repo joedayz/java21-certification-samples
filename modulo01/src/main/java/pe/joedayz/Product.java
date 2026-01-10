@@ -10,6 +10,7 @@ public class Product extends Object{
     private BigDecimal price;
     private LocalDate bestBefore = LocalDate.now().plusDays(3);
 
+    public static final int MAX_EXPIRY_PERIOD = 5;
 
     public int getId() {
         return id;
@@ -62,6 +63,7 @@ public class Product extends Object{
 
         for (var i = 0; i < 10; i++) {
             System.out.println(i);
+            //TODO implementar esto
         }
 
     }
@@ -80,6 +82,8 @@ class ProductMain{
         System.out.println(p3.getName() + " para compartir");
         p1.setName("Coffee");
         System.out.println(p1.getName() + " en una taza");
+
+        System.out.println(Product.MAX_EXPIRY_PERIOD);
 
     }
 }
