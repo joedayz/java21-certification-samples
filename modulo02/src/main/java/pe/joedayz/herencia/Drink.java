@@ -4,8 +4,8 @@ public class Drink extends Product{
 
     private String name;
 
-    public Drink(){
-
+    public Drink(String name){
+        super(name);
         System.out.println("abc");
     }
 

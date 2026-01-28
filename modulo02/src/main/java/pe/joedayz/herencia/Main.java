@@ -13,7 +13,7 @@ public class Main {
         Food food = new Food();
         System.out.println(food.getName());
 
-        Drink drink = new Drink();
+        Drink drink = new Drink("Tea");
         System.out.println(drink.getName());
 
     }
