@@ -9,6 +9,15 @@ public class Product {
     private double discount = 0;      // 0 = sin descuento
     private LocalDate bestBefore;
 
+    public Product(String name) {
+        this.name = name;
+    }
+
+    public Product(String name, double price) {
+        this.name = name;
+        this.price = price;
+    }
+
     public String getName() {
         return name;
     }
