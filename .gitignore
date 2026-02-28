@@ -18,3 +18,6 @@ buildNumber.properties
 
 # Log files from modulo05 demos
 modulo05*.log
+
+# Datos generados por modulo06
+modulo06-data/
