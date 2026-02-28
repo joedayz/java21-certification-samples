@@ -17,6 +17,10 @@ package org.example.exceptions;
  * mvn exec:java -Dexec.mainClass="org.example.exceptions.Caso08_HandlingWithLogging"
  * mvn exec:java -Dexec.mainClass="org.example.exceptions.Caso09_TryWithResources"
  * mvn exec:java -Dexec.mainClass="org.example.exceptions.Caso10_SuppressedExceptions"
+ * mvn exec:java -Dexec.mainClass="org.example.exceptions.Caso11_FlowNoException"
+ * mvn exec:java -Dexec.mainClass="org.example.exceptions.Caso12_FlowRuntimeException"
+ * mvn exec:java -Dexec.mainClass="org.example.exceptions.Caso13_FlowCatchingSpecificChecked"
+ * mvn exec:java -Dexec.mainClass="org.example.exceptions.Caso14_FlowCatchingAnyException"
  *
  * O desde el IDE: Run > Run 'CasoXX_...main()'
  *
@@ -32,6 +36,10 @@ package org.example.exceptions;
  * | 08   | Handling: logging, rethrow, cleanup        | Captura FileNotFoundException/IOException|
  * | 09   | try-with-resources                        | Auto-cierre, FileNotFoundException       |
  * | 10   | Suppressed exceptions                     | Muestra getSuppressed()                  |
+ * | 11   | Flow: Sin excepción                       | a, b, e, f                               |
+ * | 12   | Flow: Runtime NPE, finally e(), f no      | a, e, NPE propagada                      |
+ * | 13   | Flow: NoSuchFileException capturada       | a, c, e, f                               |
+ * | 14   | Flow: Exception + return, f no            | a, d, e (f no por return)                |
  */
 public class ExcepcionesMain {
 
