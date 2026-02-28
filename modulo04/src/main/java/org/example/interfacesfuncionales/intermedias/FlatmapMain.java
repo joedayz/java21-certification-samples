@@ -9,21 +9,21 @@ import java.util.stream.Stream;
 public class FlatmapMain {
 
     static void main() {
-        List<Order> orders = new ArrayList<>();
+        List<MyOrder> orders = new ArrayList<>();
 
 // Crear productos por orden
-        orders.add(new Order(List.of(
+        orders.add(new MyOrder(List.of(
                 new Product("Tea", 2.50),
                 new Product("Cake", 2.99)
         )));
-        orders.add(new Order(List.of(
+        orders.add(new MyOrder(List.of(
                 new Product("Tea", 2.50),
                 new Product("Bread", 1.80)
         )));
 
         //cuanto gaste en Tea en todas las ordenes.
         double x = orders.stream()
-                .flatMap(Order::items)
+                .flatMap(MyOrder::items)
                 .filter(p -> p.getName().equals("Tea"))
                 .mapToDouble(Product::getPrice)
                 .sum();
@@ -34,10 +34,10 @@ public class FlatmapMain {
 }
 
 
-class Order {
+class MyOrder {
     private List<Product> items;
 
-    public Order(List<Product> items) {
+    public MyOrder(List<Product> items) {
         this.items = new ArrayList<>(items);
     }
 

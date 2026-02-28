@@ -1,0 +1,8 @@
+Feb 28, 2026 1:19:45 PM org.example.logging.LogHandlersMain demostrarMultiplesHandlers
+SEVERE: SEVERE: va a consola Y archivo
+Feb 28, 2026 1:19:45 PM org.example.logging.LogHandlersMain demostrarMultiplesHandlers
+WARNING: WARNING: va a consola Y archivo
+Feb 28, 2026 1:19:45 PM org.example.logging.LogHandlersMain demostrarMultiplesHandlers
+INFO: INFO: va SOLO a archivo (consola filtra WARNING+)
+Feb 28, 2026 1:19:45 PM org.example.logging.LogHandlersMain demostrarMultiplesHandlers
+FINE: FINE: va SOLO a archivo

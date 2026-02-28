@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2026-02-28T18:19:45.570225Z</date>
+  <millis>1772302785570</millis>
+  <nanos>225000</nanos>
+  <sequence>3</sequence>
+  <logger>demo.file</logger>
+  <level>SEVERE</level>
+  <class>org.example.logging.LogHandlersMain</class>
+  <method>demostrarFileHandler</method>
+  <thread>1</thread>
+  <message>Error crítico - guardado en archivo XML</message>
+</record>
+<record>
+  <date>2026-02-28T18:19:45.571728Z</date>
+  <millis>1772302785571</millis>
+  <nanos>728000</nanos>
+  <sequence>4</sequence>
+  <logger>demo.file</logger>
+  <level>INFO</level>
+  <class>org.example.logging.LogHandlersMain</class>
+  <method>demostrarFileHandler</method>
+  <thread>1</thread>
+  <message>Info - guardado en archivo XML</message>
+</record>
+<record>
+  <date>2026-02-28T18:19:45.572043Z</date>
+  <millis>1772302785572</millis>
+  <nanos>43000</nanos>
+  <sequence>5</sequence>
+  <logger>demo.file</logger>
+  <level>FINE</level>
+  <class>org.example.logging.LogHandlersMain</class>
+  <method>demostrarFileHandler</method>
+  <thread>1</thread>
+  <message>Detalle fino - guardado en archivo XML</message>
+</record>
+</log>

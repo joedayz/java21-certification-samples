@@ -18,6 +18,13 @@ public class Product {
         this.price = price;
     }
 
+    public Product(String name, double price, double discount, LocalDate bestBefore) {
+        this.name = name;
+        this.price = price;
+        this.discount = discount;
+        this.bestBefore = bestBefore;
+    }
+
     public String getName() {
         return name;
     }
@@ -52,5 +59,10 @@ public class Product {
 
     public void applyDiscount(double factor) {
         this.discount = factor;  // o la lógica que quieras (ej. price *= (1 - factor))
+    }
+
+    @Override
+    public String toString() {
+        return name;
     }
 }
