@@ -1,5 +1,6 @@
 package org.example.logging;
 
+import java.util.logging.Handler;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -52,6 +53,13 @@ public class LoggingBasicoMain {
 
         System.out.println("\n=== 5. Métodos entering/exiting/throwing (nivel FINER) ===");
         logger.setLevel(Level.FINER);
+
+
+        for (Handler h : logger.getParent().getHandlers()) {
+            h.setLevel(Level.FINER); // Nivel del handler
+        }
+
+
         procesarOrden("ORD-001");
     }
 
