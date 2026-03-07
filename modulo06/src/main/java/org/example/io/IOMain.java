@@ -23,6 +23,8 @@ package org.example.io;
  *   java -cp target/classes org.example.io.nio.Caso16_CreateTempFilesFolders
  *   java -cp target/classes org.example.io.nio.Caso17_CopyAndMovePaths
  *   java -cp target/classes org.example.io.nio.Caso18_DeletePaths
+ *   java -cp target/classes org.example.io.zip.Caso19_HandleZipArchives
+ *   java -cp target/classes org.example.io.zip.Caso20_ZipAsFileSystem
  *
  * | Caso | Tema                                | Clases principales                    |
  * |------|-------------------------------------|--------------------------------------|
@@ -45,6 +47,8 @@ package org.example.io;
  * | 16   | Temp files/folders                 | createTempDirectory, createTempFile   |
  * | 17   | Copy and Move Paths                | Files.copy, Files.move                |
  * | 18   | Delete Paths                       | walk reverseOrder recursive delete    |
+ * | 19   | Handle Zip Archives                | ZipOutputStream, ZipEntry             |
+ * | 20   | Zip as FileSystem                  | FileSystems.newFileSystem(zip)        |
  */
 public class IOMain {
 
