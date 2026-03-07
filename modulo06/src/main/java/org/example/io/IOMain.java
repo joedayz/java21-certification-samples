@@ -25,6 +25,7 @@ package org.example.io;
  *   java -cp target/classes org.example.io.nio.Caso18_DeletePaths
  *   java -cp target/classes org.example.io.zip.Caso19_HandleZipArchives
  *   java -cp target/classes org.example.io.zip.Caso20_ZipAsFileSystem
+ *   java -cp target/classes org.example.io.http.Caso21_AccessHttpResources
  *
  * | Caso | Tema                                | Clases principales                    |
  * |------|-------------------------------------|--------------------------------------|
@@ -49,6 +50,7 @@ package org.example.io;
  * | 18   | Delete Paths                       | walk reverseOrder recursive delete    |
  * | 19   | Handle Zip Archives                | ZipOutputStream, ZipEntry             |
  * | 20   | Zip as FileSystem                  | FileSystems.newFileSystem(zip)        |
+ * | 21   | Access HTTP Resources              | HttpClient, HttpRequest, BodyHandlers |
  */
 public class IOMain {
 
