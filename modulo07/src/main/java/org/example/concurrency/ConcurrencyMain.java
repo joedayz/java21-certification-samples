@@ -12,6 +12,8 @@ package org.example.concurrency;
  *   mvn -q exec:java -Dexec.mainClass="org.example.concurrency.Caso03_ThreadSafeCounter"
  *   mvn -q exec:java -Dexec.mainClass="org.example.concurrency.Caso04_CompletableFuturePipeline"
  *   mvn -q exec:java -Dexec.mainClass="org.example.concurrency.Caso05_ProducerConsumerBlockingQueue"
+ *   mvn -q exec:java -Dexec.mainClass="org.example.concurrency.Caso06_ThreadLifecycleStates"
+ *   mvn -q exec:java -Dexec.mainClass="org.example.concurrency.Caso07_ThreadInterruptDemo"
  */
 public class ConcurrencyMain {
 
@@ -20,4 +22,3 @@ public class ConcurrencyMain {
         System.out.println("Ejecuta cada CasoXX_* individualmente para ver la demo.");
     }
 }
-

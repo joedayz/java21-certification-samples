@@ -7,6 +7,8 @@ Proyecto de demos practicas para repasar concurrencia con Java 21:
 - Sincronizacion con `synchronized`.
 - Pipelines con `CompletableFuture`.
 - Patron producer-consumer con `BlockingQueue`.
+- Ciclo de vida de un `Thread`.
+- Interrupcion de hilos con `interrupt()`.
 
 ## Requisitos
 
@@ -29,5 +31,6 @@ mvn -q exec:java -Dexec.mainClass="org.example.concurrency.Caso02_ExecutorServic
 mvn -q exec:java -Dexec.mainClass="org.example.concurrency.Caso03_ThreadSafeCounter"
 mvn -q exec:java -Dexec.mainClass="org.example.concurrency.Caso04_CompletableFuturePipeline"
 mvn -q exec:java -Dexec.mainClass="org.example.concurrency.Caso05_ProducerConsumerBlockingQueue"
+mvn -q exec:java -Dexec.mainClass="org.example.concurrency.Caso06_ThreadLifecycleStates"
+mvn -q exec:java -Dexec.mainClass="org.example.concurrency.Caso07_ThreadInterruptDemo"
 ```
-
