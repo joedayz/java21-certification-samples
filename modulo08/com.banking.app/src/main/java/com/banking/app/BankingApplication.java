@@ -48,6 +48,15 @@ public class BankingApplication {
         // Obtener el módulo actual
         Module appModule = BankingApplication.class.getModule();
         
+        // Verificar si el módulo tiene descriptor (está en module path)
+        if (appModule.getDescriptor() == null) {
+            System.out.println("\n⚠️  Ejecutando desde classpath (no module path)");
+            System.out.println("   Módulo sin nombre detectado.");
+            System.out.println("   Para usar el module system completo, ejecuta con module path.");
+            System.out.println("\n" + "─".repeat(60) + "\n");
+            return;
+        }
+        
         // Mostrar información del módulo actual
         System.out.println("\n🔹 Módulo: " + appModule.getName());
         System.out.println("   Descriptores: " + appModule.getDescriptor());
