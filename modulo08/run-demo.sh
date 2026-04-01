@@ -23,6 +23,9 @@ if [ $# -eq 0 ]; then
     echo "  app          - Ejecutar la aplicación bancaria interactiva"
     echo "  inspect      - Inspeccionar todos los módulos del sistema"
     echo "  jar          - Empaquetar como JARs"
+    echo "  multi        - Demo de Multi-Release JAR (Java 9/11/17/21)"
+    echo "  multi-build  - Compilar el Multi-Release JAR"
+    echo "  multi-verify - Verificar contenido del Multi-Release JAR"
     echo "  clean        - Limpiar archivos compilados"
     echo ""
     exit 0
@@ -56,6 +59,46 @@ case "$1" in
         find target -name "*.jar" -type f | head -10
         ;;
 
+    multi)
+        echo "📦 Ejecutando Multi-Release JAR Demo..."
+        echo ""
+        echo "🔨 Paso 1: Compilando Multi-Release JAR..."
+        cd com.banking.multirelease
+        ./build-multirelease.sh
+        echo ""
+        echo "▶️  Paso 2: Ejecutando desde JAR..."
+        java -cp target/com.banking.multirelease-1.0-SNAPSHOT.jar \
+            com.banking.multirelease.MultiReleaseDemo
+        cd ..
+        ;;
+
+    multi-build)
+        echo "🔨 Compilando Multi-Release JAR..."
+        echo ""
+        cd com.banking.multirelease
+        ./build-multirelease.sh
+        cd ..
+        echo "✅ Multi-Release JAR creado"
+        ;;
+
+    multi-verify)
+        echo "🔍 Verificando Multi-Release JAR..."
+        echo ""
+        JAR_FILE="com.banking.multirelease/target/com.banking.multirelease-1.0-SNAPSHOT.jar"
+        if [ -f "$JAR_FILE" ]; then
+            echo "📋 Manifest:"
+            jar xf "$JAR_FILE" META-INF/MANIFEST.MF 2>/dev/null || true
+            cat META-INF/MANIFEST.MF 2>/dev/null || echo "No manifest found"
+            rm -rf META-INF 2>/dev/null || true
+            echo ""
+            echo "📊 Estructura del JAR:"
+            jar tf "$JAR_FILE" | grep -E "versions|multirelease.*\.class$" | head -20
+        else
+            echo "❌ JAR no encontrado. Ejecuta primero: ./run-demo.sh multi-build"
+            exit 1
+        fi
+        ;;
+
     clean)
         echo "🧹 Limpiando archivos compilados..."
         mvn clean
@@ -64,7 +107,7 @@ case "$1" in
 
     *)
         echo "❌ Opción no reconocida: $1"
-        echo "Opciones válidas: build, app, inspect, jar, clean"
+        echo "Opciones válidas: build, app, inspect, jar, multi, multi-build, multi-verify, clean"
         exit 1
         ;;
 esac

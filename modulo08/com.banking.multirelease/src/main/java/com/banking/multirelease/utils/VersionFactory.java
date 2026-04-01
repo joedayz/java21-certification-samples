@@ -15,7 +15,7 @@ public class VersionFactory {
     
     static {
         // Intenta cargar la implementación específica de la versión
-        // Si no existe, fallará en tiempo de ejecución
+        // Si no existe, usa la implementación base (Java9VersionImpl)
         String javaVersion = System.getProperty("java.version");
         String javaVersionNumber = javaVersion.split("\\.")[0];
         
@@ -30,11 +30,23 @@ public class VersionFactory {
             
             System.out.println("✅ Cargada implementación: " + className);
         } catch (ClassNotFoundException e) {
-            System.out.println("⚠️  Implementación específica no encontrada, usando base");
-            // Fallback a implementación base si existe
+            System.out.println("⚠️  Implementación específica no encontrada, usando base (Java 9)");
+            // Fallback a implementación base
+            try {
+                versionInfo = new com.banking.multirelease.support.Java9VersionImpl();
+                System.out.println("✅ Usando implementación base: Java9VersionImpl");
+            } catch (Exception fallbackError) {
+                System.err.println("❌ Error crítico al cargar implementación base: " + fallbackError.getMessage());
+            }
         } catch (Exception e) {
             System.err.println("❌ Error al cargar implementación: " + e.getMessage());
-            e.printStackTrace();
+            // Intentar fallback
+            try {
+                versionInfo = new com.banking.multirelease.support.Java9VersionImpl();
+                System.out.println("✅ Usando implementación base: Java9VersionImpl");
+            } catch (Exception fallbackError) {
+                System.err.println("❌ Error crítico: " + fallbackError.getMessage());
+            }
         }
     }
     

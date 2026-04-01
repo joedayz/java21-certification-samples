@@ -17,6 +17,19 @@ public class MultiReleaseDemo {
         System.out.println("  Demostración de soporte multi-versión en Java");
         System.out.println("═".repeat(70) + "\n");
         
+        // Detectar si estamos ejecutando desde un JAR
+        String classPath = System.getProperty("java.class.path");
+        boolean runningFromJar = classPath.contains(".jar");
+        
+        if (runningFromJar && classPath.contains("multirelease")) {
+            System.out.println("✅ Ejecutando desde Multi-Release JAR");
+            System.out.println("   El JVM seleccionará automáticamente la versión correcta\n");
+        } else {
+            System.out.println("ℹ️  Ejecutando desde clases compiladas");
+            System.out.println("   Para ver el Multi-Release en acción, ejecuta:");
+            System.out.println("   ./run-demo.sh multi-build && ./run-demo.sh multi\n");
+        }
+        
         // Obtener información del sistema
         System.out.println("📊 INFORMACIÓN DEL SISTEMA");
         System.out.println("─".repeat(70));
